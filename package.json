@@ -10,5 +10,9 @@
     "united"
   ],
   "author": "Anthony Mantecon",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "xml-js": "^1.6.11"
+  }
 }
