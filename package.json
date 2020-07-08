@@ -5,14 +5,24 @@
   "main": "index.js",
   "scripts": {},
   "keywords": [
-    "rentalsunited",
-    "rentals",
-    "united"
+      "RentalsUnited",
+      "Rentals United",
+      "Rentals",
+      "United",
+      "nodejs",
+      "node",
+      "node js",
+      "js",
+      "json"
   ],
-  "author": "Anthony Mantecon",
-  "license": "MIT",
+  "author": "Anthony Mantecon <anthonymantecon@gmail.com>",
+  "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
     "xml-js": "^1.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wesleyshynes/rentalsunited-connector"
   }
 }

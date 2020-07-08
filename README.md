@@ -12,17 +12,17 @@ const ru = new RentalsUnitedConnector({
     debug: true // optional
 })
 
-// this wraps the call in a try catch block and provides information if an error occurred
-async function safeSampleCall () {
-    // first argument is the function you want to use, second argument is an optional array of values
-    const sampleResponse = await ru.makeCall('checkStatus', [0])
+async function sampleCall () {
+    // pass in arguments if necessary
+    const sampleResponse = await ru.checkStatus(0)
 
     return sampleResponse
 }
 
-async function sampleCall () {
-    // pass in arguments if necessary
-    const sampleResponse = await ru.checkStatus(0)
+// this wraps the call in a try catch block and provides information if an error occurred
+async function safeSampleCall () {
+    // first argument is the function you want to use, second argument is an optional array of values
+    const sampleResponse = await ru.makeCall('checkStatus', [0])
 
     return sampleResponse
 }
