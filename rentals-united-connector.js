@@ -880,7 +880,7 @@ class RentalsUnitedConnector {
             (data) => {
                 // return data
                 return {
-                    propertyID: data._attributes.propertyID,
+                    propertyID: data._attributes.PropertyID,
                     units: data._attributes.Units,
                     propertyPrices: data.PropertyPrice ? this.arrayify(data.PropertyPrice).map(propertyPrice => {
                         return {

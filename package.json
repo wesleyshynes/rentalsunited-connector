@@ -1,6 +1,6 @@
 {
   "name": "rentalsunited-connector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a robust rentals united api package that takes json and returns the responses in json.",
   "main": "index.js",
   "scripts": {},
