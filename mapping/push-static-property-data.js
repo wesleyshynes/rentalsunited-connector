@@ -63,7 +63,7 @@ function putProperty(propertyData, authInfo) {
 }
 
 function createProperty(p) {
-    return {
+    const propertyData = {
         Property: {
             PUID: {
                 _attributes: {
@@ -253,9 +253,22 @@ function createProperty(p) {
             },
             LicenceInfo: {
                 LicenceNumber: p.licenseInfo.licenseNumber
-            }
+            },
+            PreparationTimeBeforeArrivalInHours: p.preparationTimeBeforeArrivalInHours
         }
     }
+
+    if(p.id) {
+        propertyData.Property.ID = {
+            _attributes: {
+                BuildingID: p.id.buildingID,
+                BuildingName: p.id.buildingName
+            },
+            _text: p.id.text
+        }
+    }
+
+    return propertyData
 }
 
 

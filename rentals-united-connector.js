@@ -1883,7 +1883,9 @@ class RentalsUnitedConnector {
                         value: additionalFee.Value._text
                     }
                 })
-            }]
+            }],
+            ['PreparationTimeBeforeArrival', 'preparationTimeBeforeArrival'],
+            ['PreparationTimeBeforeArrivalInHours', 'preparationTimeBeforeArrivalInHours'],
         ]
 
         const propertyListEntry = {
