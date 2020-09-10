@@ -64,36 +64,36 @@ function putProperty(propertyData, authInfo) {
 
 function createProperty(p) {
     const propertyData = {
-        Property: {
+        Property: { // O
             PUID: {
                 _attributes: {
                     BuildingID: p.puid.buildingID
                 },
                 _text: p.puid.text
             },
-            Name: p.name,
-            OwnerID: p.ownerID,
-            DetailedLocationID: {
+            Name: p.name, // M,X
+            OwnerID: p.ownerID, // M
+            DetailedLocationID: { // M,X
                 _attributes: {
                     TypeID: p.detailedLocationID.typeID
                 },
                 _text: p.detailedLocationID.text
             },
-            IsActive: p.isActive,
-            IsArchived:  p.isArchived,
-            CleaningPrice: p.cleaningPrice,
-            Space: p.space,
-            StandardGuests: p.standardGuests,
-            CanSleepMax: p.canSleepMax,
-            PropertyTypeID: p.propertyTypeID,
-            Floor: p.floor,
-            Street: p.street,
-            ZipCode: p.zipCode,
-            Coordinates: {
+            IsActive: p.isActive, // M
+            IsArchived:  p.isArchived, // M
+            CleaningPrice: p.cleaningPrice, // M,X
+            Space: p.space, // M,X
+            StandardGuests: p.standardGuests, // M,X
+            CanSleepMax: p.canSleepMax, // M,X
+            PropertyTypeID: p.propertyTypeID, // M,X
+            Floor: p.floor, // M,X
+            Street: p.street, // M,X
+            ZipCode: p.zipCode, // M,X
+            Coordinates: { // C,X
                 Longitude: p.coordinates.longitude,
                 Latitude: p.coordinates.lattitude
             },
-            Distances: {
+            Distances: { // C,O,X
                 Distance: p.distances.map(x => {
                     return {
                         DestinationID: x.distanceUnitID,
@@ -102,7 +102,7 @@ function createProperty(p) {
                     }
                 })
             },
-            CompositionRooms: {
+            CompositionRooms: { // C,O,X
                 CompositionRoomID: p.compositionRooms.map(x => {
                     return {
                         _attributes: {
@@ -112,7 +112,7 @@ function createProperty(p) {
                     }
                 })
             },
-            Amenities: {
+            Amenities: { // C,O,X
                 Amenity: p.amenities.map(x => {
                     let amenityValue = {
                         _text: x.amenity
@@ -125,7 +125,7 @@ function createProperty(p) {
                     return amenityValue
                 })
             },
-            Images: {
+            Images: { // C,O,X
                 Image: p.images.map(x => {
                     return {
                         _attributes: {
@@ -135,7 +135,7 @@ function createProperty(p) {
                     }
                 })
             },
-            ArrivalInstructions: {
+            ArrivalInstructions: { // C,M,X
                 Landlord: p.arrivalInstructions.landord,
                 Email: p.arrivalInstructions.email,
                 Phone: p.arrivalInstructions.phone,
@@ -161,7 +161,7 @@ function createProperty(p) {
                     })
                 }
             },
-            CheckInOut: {
+            CheckInOut: { //C,M,X
                 CheckInFrom: p.checkInOut.checkInFrom,
                 CheckInTo: p.checkInOut.checkInTo,
                 CheckOutUntil: p.checkInOut.checkOutUntil,
@@ -189,7 +189,7 @@ function createProperty(p) {
                     })
                 }
             },
-            PaymentMethods: {
+            PaymentMethods: { // C,M
                 PaymentMethod: p.paymentMethods.map(x => {
                     return {
                         _attributes: {
@@ -205,7 +205,7 @@ function createProperty(p) {
                 },
                 _text: p.deposit.text
             },
-            CancellationPolicies: {
+            CancellationPolicies: { //C,M,X
                 CancellationPolicy: p.cancellationPolicies.map(x => {
                     return {
                         _attributes: {
