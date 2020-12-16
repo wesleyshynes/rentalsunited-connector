@@ -170,7 +170,7 @@ function putPrices(propertyID, pricing, authInfo) {
     }
 
     if(pricing.fspSeasons) {
-        pricingEntry.FSPSeasons = {
+        pricesEntry.FSPSeasons = {
             FSPSeason: pricing.fspSeasons.map(f => {
                 return {
                     _attributes: {
