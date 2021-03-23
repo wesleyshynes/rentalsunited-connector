@@ -65,6 +65,27 @@ class RentalsUnitedConnector {
         }
     }
 
+    // BEGING RESERVATION LIVE NOTIFICATION MECHANISM /////////////////////////////////////
+
+    async enableRLNM(handleUrl) {
+        console.log('calling int')
+        this.logMessage(`enabling reservation live notification mechanism for ${handleUrl}`)
+        const requestObject = this.reservationLiveNotificationMechanism.enableRLNM(handleUrl, this.authInfo())
+        console.log(requestObject)
+        const requestResponse = await this.makeRequestAndMap(
+            requestObject,
+            ['LNM_PutHandlerUrl_RS'],
+            (data) => {
+                console.log(data)
+                return data
+            }
+        )
+        return requestResponse
+    }
+
+    // END RESERVATION LIVE NOTIFICATION MECHANISM ///////////////////////////////////////
+
+
     // BEGIN DEFINITION FUNCTIONS //////////////////////////////////////////////
     async checkStatus(statusCode){
         this.logMessage('calling check Status')
